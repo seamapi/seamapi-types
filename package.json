@@ -1,0 +1,23 @@
+{
+  "name": "@seamapi/connect-types",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:seamapi/seam-connect-types.git",
+  "author": "Max Isom <hi@maxisom.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "prettier": "2.6.0",
+    "tsup": "5.12.1",
+    "typescript": "4.6.2"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run format:check"
+  }
+}
