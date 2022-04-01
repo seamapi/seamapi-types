@@ -44,6 +44,7 @@ export type InitiateTwoFactorPane = Pane<
   "initiate_two_factor_pane",
   {
     options: TwoFactorOptionWithId[]
+    provider: ProviderMetadata
   },
   {
     id: TwoFactorOptionWithId["id"]
@@ -52,7 +53,10 @@ export type InitiateTwoFactorPane = Pane<
 
 export type TwoFactorPane = Pane<
   "two_factor_pane",
-  { code_length: number },
+  {
+    code_length: number
+    provider: ProviderMetadata
+  },
   { code: string }
 >
 
