@@ -19,8 +19,6 @@ jobs:
           node-version: "14.x"
           registry-url: "https://npm.pkg.github.com"
       - name: Install dependencies
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GWM_GH_TOKEN }}
         run: yarn install
       - name: Build
         run: yarn build
@@ -28,6 +26,6 @@ jobs:
         run: yarn test
       - name: Release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
