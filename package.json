@@ -1,5 +1,5 @@
 {
-  "name": "@seamapi/seam-connect-public-types",
+  "name": "seamapi-types",
   "publishConfig": {
     "access": "public"
   },
