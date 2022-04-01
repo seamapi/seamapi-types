@@ -1,9 +1,12 @@
 {
-  "name": "@seamapi/connect-types",
+  "name": "@seamapi/seam-connect-public-types",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:seamapi/seam-connect-types.git",
+  "repository": "git@github.com:seamapi/seam-connect-public-types.git",
   "author": "Max Isom <hi@maxisom.me>",
   "license": "MIT",
   "devDependencies": {
