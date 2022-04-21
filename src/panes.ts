@@ -18,6 +18,14 @@ type Pane<
   submit_props: PaneSubmitProps
 }
 
+export type RedirectPane = Pane<
+  "redirect_pane",
+  {
+    redirect_url: string
+  },
+  {}
+>
+
 export type SearchAndSelectPane = Pane<
   "search_and_select_pane",
   {
@@ -63,6 +71,7 @@ export type TwoFactorPane = Pane<
 export type FinishedPane = Pane<"finished_pane", {}, {}>
 
 export type AnyPane =
+  | RedirectPane
   | SearchAndSelectPane
   | LoginPane
   | InitiateTwoFactorPane
