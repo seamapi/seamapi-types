@@ -23,7 +23,9 @@ export type RedirectPane = Pane<
   {
     redirect_url: string
   },
-  {}
+  {
+    callback_args: Record<string, string>
+  }
 >
 
 export type SearchAndSelectPane = Pane<
