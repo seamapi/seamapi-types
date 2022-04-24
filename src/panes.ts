@@ -44,7 +44,7 @@ export type SearchAndSelectPane = Pane<
 export type LoginPane = Pane<
   "login_pane",
   {
-    accepted_user_identifiers: Array<"email" | "phone">
+    accepted_user_identifiers: Array<"email" | "phone" | "username">
     provider: ProviderMetadata
   },
   { user_identifier: string; password: string }
