@@ -1,4 +1,5 @@
 import { Except } from "type-fest"
+import { AnyField } from "./fields"
 import { TwoFactorOptionWithId } from "./two-factor-options"
 
 export type ProviderMetadata = {
@@ -70,6 +71,16 @@ export type TwoFactorPane = Pane<
   { code: string }
 >
 
+export type FieldsPane = Pane<
+  "fields_pane",
+  {
+    fields: AnyField["props"][]
+  },
+  {
+    input: AnyField["input"][]
+  }
+>
+
 export type FinishedPane = Pane<"finished_pane", {}, {}>
 
 export type AnyPane =
@@ -78,6 +89,7 @@ export type AnyPane =
   | LoginPane
   | InitiateTwoFactorPane
   | TwoFactorPane
+  | FieldsPane
   | FinishedPane
 
 export type AnyPaneWithoutSubmitProps = Except<AnyPane, "submit_props">
