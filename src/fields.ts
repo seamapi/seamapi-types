@@ -1,5 +1,6 @@
 export type Field<Type extends string, Props, Input> = {
-  type: string
+  name: string
+  type: Type
   props: {
     label: string
     is_required: boolean
