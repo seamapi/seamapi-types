@@ -13,7 +13,7 @@ export type TextField = Field<
   {
     placeholder: string
     regex?: string
-    type?: "text" | "password" | "email" | "number" | "tel" | "url"
+    text_type?: "text" | "password" | "email" | "number" | "tel" | "url"
   },
   string
 >
