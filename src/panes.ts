@@ -75,6 +75,9 @@ export type FieldsPane = Pane<
   "fields_pane",
   {
     fields: AnyField["props"][]
+    header?: {
+      provider?: ProviderMetadata
+    }
   },
   {
     input: AnyField["input"][]
