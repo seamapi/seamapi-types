@@ -5,9 +5,7 @@ export type Field<Type extends string, Props, Input> = {
     name: string
     type: Type
   } & Props
-  input: {
-    name: string
-  } & Input
+  input: Input
 }
 
 export type TextField = Field<

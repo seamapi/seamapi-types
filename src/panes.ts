@@ -80,9 +80,7 @@ export type FieldsPane = Pane<
       provider?: ProviderMetadata
     }
   },
-  {
-    input: AnyField["input"][]
-  }
+  Record<string, AnyField["input"]>
 >
 
 export type FinishedPane = Pane<"finished_pane", {}, {}>
