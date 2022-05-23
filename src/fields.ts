@@ -1,11 +1,13 @@
 export type Field<Type extends string, Props, Input> = {
-  name: string
-  type: Type
   props: {
     label: string
     is_required: boolean
+    name: string
+    type: Type
   } & Props
-  input: Input
+  input: {
+    name: string
+  } & Input
 }
 
 export type TextField = Field<
