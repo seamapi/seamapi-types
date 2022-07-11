@@ -11,20 +11,20 @@ interface CommonDeviceEvent<
 
 // Devices
 type DeviceConnectedEvent = CommonDeviceEvent<"device.connected">
-type DeviceDisconnectEvent = CommonDeviceEvent<"devices.disconnected">
-type DeviceTamperEvent = CommonDeviceEvent<"devices.tampered">
-type DeviceLowBatteryEvent = CommonDeviceEvent<"devices.triggered_low_battery">
+type DeviceDisconnectEvent = CommonDeviceEvent<"device.disconnected">
+type DeviceTamperEvent = CommonDeviceEvent<"device.tampered">
+type DeviceLowBatteryEvent = CommonDeviceEvent<"device.low_battery">
 
 // Access codes
 type CreateAccessCodeEvent = CommonDeviceEvent<
-  "access_codes.created",
+  "access_code.created",
   {
     access_code_id: string
   }
 >
 
 // Noise thresholds
-type NoiseDetectedEvent = CommonDeviceEvent<"noise_thresholds.detected_noise">
+type NoiseDetectedEvent = CommonDeviceEvent<"noise_detection.detected_noise">
 
 export type SeamEvent =
   | DeviceConnectedEvent
