@@ -5,7 +5,7 @@ Shared types for using the [Seam Connect API](https://github.com/seamapi/javascr
 ## Usage
 
 ```ts
-import { SeamEvent, DeviceConnectedEvent } from "seamapi-types"
+import { SeamEvent, DeviceConnectedEvent, DeviceDisconnectedEvent } from "seamapi-types"
 
 // You can now use these types in your code!
 ```
