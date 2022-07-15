@@ -11,7 +11,12 @@ export interface CommonDeviceEvent<
 
 // Devices
 export type DeviceConnectedEvent = CommonDeviceEvent<"device.connected">
-export type DeviceDisconnectEvent = CommonDeviceEvent<"device.disconnected">
+export type DeviceDisconnectEvent = CommonDeviceEvent<
+  "device.disconnected",
+  {
+    error_code: "hub_disconnected" | "device_disconnected"
+  }
+>
 export type DeviceTamperEvent = CommonDeviceEvent<"device.tampered">
 export type DeviceLowBatteryEvent = CommonDeviceEvent<"device.low_battery">
 
