@@ -18,7 +18,12 @@ export type DeviceDisconnectEvent = CommonDeviceEvent<
   }
 >
 export type DeviceTamperEvent = CommonDeviceEvent<"device.tampered">
-export type DeviceLowBatteryEvent = CommonDeviceEvent<"device.low_battery">
+export type DeviceLowBatteryEvent = CommonDeviceEvent<
+  "device.low_battery",
+  {
+    battery_level: number
+  }
+>
 
 // Access codes
 export type CreateAccessCodeEvent = CommonDeviceEvent<
