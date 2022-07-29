@@ -17,6 +17,7 @@ type Pane<
   name: Name
   render_props: PaneRenderProps & { error_msg?: string }
   submit_props: PaneSubmitProps
+  last_modified_at: string
 }
 
 export type RedirectPane = Pane<
