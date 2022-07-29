@@ -18,7 +18,7 @@ type Pane<
   render_props: PaneRenderProps & { error_msg?: string }
   submit_props: PaneSubmitProps
   /** Timestamp last time pane was changed in ISO8601 format */
-  last_modified_at: string
+  last_updated_at: string
 }
 
 export type RedirectPane = Pane<
