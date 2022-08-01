@@ -21,6 +21,14 @@ type Pane<
   last_updated_at: string
 }
 
+export type LoadingPane = Pane<
+  "loading",
+  {
+    message: string
+  },
+  {}
+>
+
 export type RedirectPane = Pane<
   "redirect_pane",
   {
@@ -88,6 +96,7 @@ export type FieldsPane = Pane<
 export type FinishedPane = Pane<"finished_pane", {}, {}>
 
 export type AnyPane =
+  | LoadingPane
   | RedirectPane
   | SearchAndSelectPane
   | LoginPane
