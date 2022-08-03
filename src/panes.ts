@@ -48,6 +48,7 @@ export type SearchAndSelectPane = Pane<
       value: string
       image_url?: string
     }>
+    should_select_multiple?: boolean
   },
   { value: string }
 >
