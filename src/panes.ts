@@ -50,7 +50,7 @@ export type SearchAndSelectPane = Pane<
     }>
     can_select_multiple?: boolean
   },
-  { value: string }
+  { value: string | string[] }
 >
 
 export type LoginPane = Pane<
