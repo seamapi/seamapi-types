@@ -48,8 +48,9 @@ export type SearchAndSelectPane = Pane<
       value: string
       image_url?: string
     }>
+    can_select_multiple?: boolean
   },
-  { value: string }
+  { value: string | string[] }
 >
 
 export type LoginPane = Pane<
