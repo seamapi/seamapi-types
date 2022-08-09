@@ -43,12 +43,14 @@ export type SearchAndSelectPane = Pane<
   "search_and_select_pane",
   {
     title: string
+    description?: string
     options: Array<{
       label: string
+      sublabel?: string
       value: string
       image_url?: string
     }>
-    can_select_multiple?: boolean
+    device_selection_mode?: string
   },
   { value: string | string[] }
 >
