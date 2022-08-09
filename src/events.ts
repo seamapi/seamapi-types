@@ -37,7 +37,6 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
 
-
 export interface CommonConnectedAccountEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
@@ -49,8 +48,11 @@ export interface CommonConnectedAccountEvent<
   }
 }
 
-export type ConnectedAccountDisconnected = CommonConnectedAccountEvent<"connected_account.disconnected", {}>
-  
+export type ConnectedAccountDisconnected = CommonConnectedAccountEvent<
+  "connected_account.disconnected",
+  {}
+>
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | DeviceDisconnectEvent
