@@ -37,6 +37,20 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
 
+
+export interface CommonConnectedAccountEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    connected_account_id: string
+  }
+}
+
+export type AccountDisconnected = CommonConnectedAccountEvent<"connected_account.disconnected", {}>
+  
 export type SeamEvent =
   | DeviceConnectedEvent
   | DeviceDisconnectEvent
