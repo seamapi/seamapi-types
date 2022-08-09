@@ -49,7 +49,7 @@ export interface CommonConnectedAccountEvent<
   }
 }
 
-export type AccountDisconnected = CommonConnectedAccountEvent<"connected_account.disconnected", {}>
+export type ConnectedAccountDisconnected = CommonConnectedAccountEvent<"connected_account.disconnected", {}>
   
 export type SeamEvent =
   | DeviceConnectedEvent
@@ -58,3 +58,4 @@ export type SeamEvent =
   | DeviceLowBatteryEvent
   | CreateAccessCodeEvent
   | NoiseDetectedEvent
+  | ConnectedAccountDisconnected
