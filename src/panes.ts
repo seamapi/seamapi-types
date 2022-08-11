@@ -51,6 +51,7 @@ export type SearchAndSelectPane = Pane<
       image_url?: string
     }>
     selection_mode?: "none" | "single" | "multiple"
+    context: "device"
   },
   { value: string | string[] }
 >
