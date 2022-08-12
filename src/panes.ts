@@ -43,7 +43,6 @@ export type SearchAndSelectPane = Pane<
   "search_and_select_pane",
   {
     title: string
-    description?: string
     options: Array<{
       label: string
       sublabel?: string
@@ -51,6 +50,8 @@ export type SearchAndSelectPane = Pane<
       image_url?: string
     }>
     selection_mode?: "none" | "single" | "multiple"
+    context?: "device"
+    manufacturer_name?: string
   },
   { value: string | string[] }
 >
