@@ -14,7 +14,10 @@ export type DeviceConnectedEvent = CommonDeviceEvent<"device.connected">
 export type DeviceDisconnectEvent = CommonDeviceEvent<
   "device.disconnected",
   {
-    error_code: "hub_disconnected" | "device_disconnected"
+    error_code:
+      | "account_disconnected"
+      | "hub_disconnected"
+      | "device_disconnected"
   }
 >
 export type DeviceTamperEvent = CommonDeviceEvent<"device.tampered">
