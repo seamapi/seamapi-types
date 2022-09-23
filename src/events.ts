@@ -40,6 +40,22 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
 
+// Locks
+export type LockMethod = "keycode" | "manual" | "unknown"
+export type LockLockedEvent = CommonDeviceEvent<
+  "lock.locked",
+  {
+    access_code_id?: string
+    method: LockMethod
+  }
+>
+export type LockUnlockedEvent = CommonDeviceEvent<
+  "lock.unlocked",
+  {
+    access_code_id?: string
+    method: LockMethod
+  }
+>
 export interface CommonConnectedAccountEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
@@ -64,3 +80,5 @@ export type SeamEvent =
   | CreateAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
+  | LockLockedEvent
+  | LockUnlockedEvent
