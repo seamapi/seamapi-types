@@ -36,6 +36,13 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
   }
 >
 
+export type UpdateAccessCodeEvent = CommonDeviceEvent<
+  "access_code.updated",
+  {
+    access_code_id: string
+  }
+>
+
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
