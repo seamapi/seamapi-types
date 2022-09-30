@@ -85,6 +85,7 @@ export type SeamEvent =
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | CreateAccessCodeEvent
+  | UpdateAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
   | LockLockedEvent
