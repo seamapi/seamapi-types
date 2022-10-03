@@ -36,6 +36,13 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
   }
 >
 
+export type UpdateAccessCodeEvent = CommonDeviceEvent<
+  "access_code.updated",
+  {
+    access_code_id: string
+  }
+>
+
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
@@ -78,6 +85,7 @@ export type SeamEvent =
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | CreateAccessCodeEvent
+  | UpdateAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
   | LockLockedEvent
