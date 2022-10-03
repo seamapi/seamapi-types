@@ -36,8 +36,8 @@ export type CreateAccessCodeEvent = CommonDeviceEvent<
   }
 >
 
-export type UpdateAccessCodeEvent = CommonDeviceEvent<
-  "access_code.updated",
+export type ChangeAccessCodeEvent = CommonDeviceEvent<
+  "access_code.changed",
   {
     access_code_id: string
   }
@@ -85,7 +85,7 @@ export type SeamEvent =
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | CreateAccessCodeEvent
-  | UpdateAccessCodeEvent
+  | ChangeAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
   | LockLockedEvent
