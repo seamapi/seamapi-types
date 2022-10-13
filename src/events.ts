@@ -43,6 +43,20 @@ export type ChangeAccessCodeEvent = CommonDeviceEvent<
   }
 >
 
+export type SetOnDeviceAccessCodeEvent = CommonDeviceEvent<
+  "access_code.set_on_device",
+  {
+    access_code_id: string
+  }
+>
+
+export type RemovedFromDeviceAccessCodeEvent = CommonDeviceEvent<
+  "access_code.removed_from_device",
+  {
+    access_code_id: string
+  }
+>
+
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
@@ -86,6 +100,8 @@ export type SeamEvent =
   | DeviceLowBatteryEvent
   | CreateAccessCodeEvent
   | ChangeAccessCodeEvent
+  | SetOnDeviceAccessCodeEvent
+  | RemovedFromDeviceAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
   | LockLockedEvent
