@@ -27,6 +27,8 @@ export type DeviceLowBatteryEvent = CommonDeviceEvent<
     battery_level: number
   }
 >
+export type DeviceCodeLimitReachedEvent =
+  CommonDeviceEvent<"device.code_limit_reached">
 
 // Access codes
 export type CreateAccessCodeEvent = CommonDeviceEvent<
