@@ -31,33 +31,29 @@ export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 
 // Access codes
-export type CreateAccessCodeEvent = CommonDeviceEvent<
-  "access_code.created",
-  {
-    access_code_id: string
-  }
->
+export interface CommonAccessCodeEvent<
+  EventType extends string
+> extends CommonDeviceEvent<
+    EventType,
+    {
+      access_code_id: string
+    }
+  > {}
 
-export type ChangeAccessCodeEvent = CommonDeviceEvent<
-  "access_code.changed",
-  {
-    access_code_id: string
-  }
->
-
-export type SetOnDeviceAccessCodeEvent = CommonDeviceEvent<
-  "access_code.set_on_device",
-  {
-    access_code_id: string
-  }
->
-
-export type RemovedFromDeviceAccessCodeEvent = CommonDeviceEvent<
-  "access_code.removed_from_device",
-  {
-    access_code_id: string
-  }
->
+export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
+export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
+export type SetOnDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.set_on_device">
+export type RemovedFromDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.removed_from_device">
+export type DelayInSettingOnDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.delay_in_setting_on_device">
+export type FailedToSetOnDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.failed_to_set_on_device">
+export type DelayInRemovingFromDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.delay_in_removing_from_device">
+export type FailedToRemoveFromDeviceAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.failed_to_remove_from_device">
 
 // Noise thresholds
 export type NoiseDetectedEvent =
