@@ -100,6 +100,10 @@ export type SeamEvent =
   | ChangeAccessCodeEvent
   | SetOnDeviceAccessCodeEvent
   | RemovedFromDeviceAccessCodeEvent
+  | FailedToRemoveFromDeviceAccessCodeEvent
+  | DelayInRemovingFromDeviceAccessCodeEvent
+  | FailedToSetOnDeviceAccessCodeEvent
+  | DelayInSettingOnDeviceAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountDisconnected
   | LockLockedEvent
