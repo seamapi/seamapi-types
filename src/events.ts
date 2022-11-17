@@ -37,7 +37,7 @@ export interface CommonAccessCodeEvent<
     EventType,
     {
       access_code_id: string
-      code: string
+      code: string | null
     }
   > {}
 
