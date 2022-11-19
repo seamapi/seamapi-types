@@ -40,10 +40,20 @@ export interface CommonAccessCodeEvent<
     }
   > {}
 
+interface DetailedAccessCodeEvent<
+  EventType extends string
+> extends CommonDeviceEvent<
+    EventType,
+    {
+      access_code_id: string
+      code: string
+    }
+  > {}
+
 export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
 export type SetOnDeviceAccessCodeEvent =
-  CommonAccessCodeEvent<"access_code.set_on_device"> & { code: string }
+  DetailedAccessCodeEvent<"access_code.set_on_device">
 export type RemovedFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.removed_from_device">
 export type DelayInSettingOnDeviceAccessCodeEvent =
