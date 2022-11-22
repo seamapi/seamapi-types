@@ -2,6 +2,17 @@ import { Except } from "type-fest"
 import { AnyField } from "./fields"
 import { TwoFactorOptionWithId } from "./two-factor-options"
 
+export type WebviewFlowErrorCode =
+  | UnexpectedWebviewFlowErrorCode
+  | LoginWebviewFlowErrorCode
+
+export type UnexpectedWebviewFlowErrorCode = "ERROR"
+
+export type LoginWebviewFlowErrorCode =
+  | "BAD_CREDENTIALS"
+  | "TWO_FACTOR_REQUIRED"
+  | "TWO_FACTOR_BAD_CODE"
+
 export type ProviderMetadata = {
   display_name: string
   image_url: string
@@ -15,7 +26,10 @@ type Pane<
   PaneSubmitProps extends Record<string, unknown>
 > = {
   name: Name
-  render_props: PaneRenderProps & { error_msg?: string }
+  render_props: PaneRenderProps & {
+    error_msg?: string
+    error_code?: WebviewFlowErrorCode
+  }
   submit_props: PaneSubmitProps
   /** Timestamp last time pane was changed in ISO8601 format */
   last_updated_at: string
