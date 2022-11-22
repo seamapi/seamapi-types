@@ -8,6 +8,10 @@ export type WebviewFlowErrorCode =
 
 export type UnexpectedWebviewFlowErrorCode = "ERROR"
 
+export type UserInputWebviewFlowErrorCode =
+  | "INVALID_MASTER_CODE"
+  | "INVALID_PHONE_NUMBER"
+
 export type LoginWebviewFlowErrorCode =
   | "BAD_CREDENTIALS"
   | "TWO_FACTOR_REQUIRED"
