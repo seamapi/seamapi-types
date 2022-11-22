@@ -4,6 +4,7 @@ import { TwoFactorOptionWithId } from "./two-factor-options"
 
 export type WebviewFlowErrorCode =
   | UnexpectedWebviewFlowErrorCode
+  | UserInputWebviewFlowErrorCode
   | LoginWebviewFlowErrorCode
 
 export type UnexpectedWebviewFlowErrorCode = "ERROR"
