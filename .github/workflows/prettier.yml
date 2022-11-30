@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 14
       - name: Run Prettier Test
-        run: npx prettier --check .
+        run: npx prettier --debug-check --loglevel debug .
