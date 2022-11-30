@@ -5,6 +5,7 @@ export interface CommonDeviceEvent<
   event_type: EventType
   payload: Payload & {
     workspace_id: string
+    connected_account_id: string
     device_id: string
   }
 }
