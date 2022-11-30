@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 16
       - name: Run Prettier Test
-        run: npx prettier --check .
+        run: npm run format:check
