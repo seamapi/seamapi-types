@@ -86,6 +86,8 @@ export type LockUnlockedEvent = CommonDeviceEvent<
     method: LockMethod
   }
 >
+
+// Connected accounts
 export interface CommonConnectedAccountEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
@@ -97,10 +99,11 @@ export interface CommonConnectedAccountEvent<
   }
 }
 
-export type ConnectedAccountDisconnected = CommonConnectedAccountEvent<
-  "connected_account.disconnected",
-  {}
->
+export type ConnectedAccountConnected =
+  CommonConnectedAccountEvent<"connected_account.connected">
+
+export type ConnectedAccountDisconnected =
+  CommonConnectedAccountEvent<"connected_account.disconnected">
 
 export type SeamEvent =
   | DeviceConnectedEvent
@@ -116,6 +119,7 @@ export type SeamEvent =
   | FailedToSetOnDeviceAccessCodeEvent
   | DelayInSettingOnDeviceAccessCodeEvent
   | NoiseDetectedEvent
+  | ConnectedAccountConnected
   | ConnectedAccountDisconnected
   | LockLockedEvent
   | LockUnlockedEvent
