@@ -34,6 +34,7 @@ type Pane<
   render_props: PaneRenderProps & {
     error_msg?: string
     error_code?: WebviewFlowErrorCode
+    scheduling_link?: string
   }
   submit_props: PaneSubmitProps
   /** Timestamp last time pane was changed in ISO8601 format */
