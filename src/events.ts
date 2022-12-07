@@ -8,6 +8,7 @@ export interface CommonDeviceEvent<
     connected_account_id: string
     device_id: string
   }
+  created_at: string
 }
 
 // Devices
@@ -97,6 +98,7 @@ export interface CommonConnectedAccountEvent<
     workspace_id: string
     connected_account_id: string
   }
+  created_at: string
 }
 
 export type ConnectedAccountConnected =
