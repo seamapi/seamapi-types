@@ -72,7 +72,7 @@ export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
 
 // Locks
-export type LockMethod = "keycode" | "manual" | "unknown"
+export type LockMethod = "keycode" | "manual" | "seam-connect-api" | "unknown"
 export type LockLockedEvent = CommonDeviceEvent<
   "lock.locked",
   {
