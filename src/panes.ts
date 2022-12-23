@@ -110,6 +110,7 @@ export type FieldsPane = Pane<
   "fields_pane",
   {
     fields: AnyField["props"][]
+    submit_label?: string
     header: {
       title: string
       provider?: ProviderMetadata
