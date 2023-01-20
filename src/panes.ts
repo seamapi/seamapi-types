@@ -53,6 +53,7 @@ export type RedirectPane = Pane<
   "redirect_pane",
   {
     redirect_url: string
+    pre_redirect_acknowledgement?: boolean
   },
   {
     callback_args: Record<string, string>
