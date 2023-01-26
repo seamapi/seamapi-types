@@ -33,16 +33,18 @@ export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 
 // Access codes
-export interface CommonAccessCodeEvent<EventType extends string>
-  extends CommonDeviceEvent<
+export interface CommonAccessCodeEvent<
+  EventType extends string
+> extends CommonDeviceEvent<
     EventType,
     {
       access_code_id: string
     }
   > {}
 
-interface DetailedAccessCodeEvent<EventType extends string>
-  extends CommonDeviceEvent<
+interface DetailedAccessCodeEvent<
+  EventType extends string
+> extends CommonDeviceEvent<
     EventType,
     {
       access_code_id: string
