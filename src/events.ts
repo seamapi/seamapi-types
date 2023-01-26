@@ -101,8 +101,15 @@ export interface CommonConnectedAccountEvent<
   created_at: string
 }
 
-export type ConnectedAccountConnected =
-  CommonConnectedAccountEvent<"connected_account.connected">
+export type ConnectedAccountConnected = CommonConnectedAccountEvent<
+  "connected_account.connected",
+  { connect_webview_id: string }
+>
+
+export type ConnectedAccountCreated = CommonConnectedAccountEvent<
+  "connected_account.created",
+  { connect_webview_id: string }
+>
 
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
@@ -122,6 +129,7 @@ export type SeamEvent =
   | DelayInSettingOnDeviceAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountConnected
+  | ConnectedAccountCreated
   | ConnectedAccountDisconnected
   | LockLockedEvent
   | LockUnlockedEvent
