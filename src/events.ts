@@ -104,8 +104,8 @@ export type ConnectedAccountConnected = CommonConnectedAccountEvent<
   { connect_webview_id: string }
 >
 
-export type ConnectedAccountAdded = CommonConnectedAccountEvent<
-  "connected_account.added",
+export type ConnectedAccountCreated = CommonConnectedAccountEvent<
+  "connected_account.created",
   { connect_webview_id: string }
 >
 
@@ -127,7 +127,7 @@ export type SeamEvent =
   | DelayInSettingOnDeviceAccessCodeEvent
   | NoiseDetectedEvent
   | ConnectedAccountConnected
-  | ConnectedAccountAdded
+  | ConnectedAccountCreated
   | ConnectedAccountDisconnected
   | LockLockedEvent
   | LockUnlockedEvent
