@@ -33,18 +33,16 @@ export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 
 // Access codes
-export interface CommonAccessCodeEvent<
-  EventType extends string
-> extends CommonDeviceEvent<
+export interface CommonAccessCodeEvent<EventType extends string>
+  extends CommonDeviceEvent<
     EventType,
     {
       access_code_id: string
     }
   > {}
 
-interface DetailedAccessCodeEvent<
-  EventType extends string
-> extends CommonDeviceEvent<
+interface DetailedAccessCodeEvent<EventType extends string>
+  extends CommonDeviceEvent<
     EventType,
     {
       access_code_id: string
@@ -101,8 +99,10 @@ export interface CommonConnectedAccountEvent<
   created_at: string
 }
 
-export type ConnectedAccountConnected =
-  CommonConnectedAccountEvent<"connected_account.connected">
+export type ConnectedAccountConnected = CommonConnectedAccountEvent<
+  "connected_account.connected",
+  { connect_webview_id: string }
+>
 
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
