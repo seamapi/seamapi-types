@@ -54,6 +54,7 @@ export type RedirectPane = Pane<
   {
     redirect_url: string
     pre_redirect_acknowledgement?: boolean
+    context?: "smartthings_auth"
   },
   {
     callback_args: Record<string, string>
@@ -72,7 +73,7 @@ export type SearchAndSelectPane = Pane<
       image_url?: string
     }>
     selection_mode?: "none" | "single" | "multiple"
-    context?: "device"
+    context?: "device" | "smartthings_auth"
     manufacturer_name?: string
   },
   { value: string | string[] }
@@ -120,7 +121,23 @@ export type FieldsPane = Pane<
   Record<string, AnyField["input"]>
 >
 
-export type FinishedPane = Pane<"finished_pane", {}, {}>
+export interface SmartThingsLocation {
+  id: string
+  name: string
+}
+
+export type FinishedPane = Pane<
+  "finished_pane",
+  {
+    context?: {
+      smartthings_auth?: {
+        locations: SmartThingsLocation[]
+        oauth_redirect: string
+      }
+    }
+  },
+  {}
+>
 
 export type AnyPane =
   | LoadingPane
