@@ -55,6 +55,7 @@ export type RedirectPane = Pane<
     redirect_url: string
     pre_redirect_acknowledgement?: boolean
     context?: "smartthings_auth"
+    provider?: ProviderMetadata
   },
   {
     callback_args: Record<string, string>
@@ -75,6 +76,7 @@ export type SearchAndSelectPane = Pane<
     selection_mode?: "none" | "single" | "multiple"
     context?: "device" | "smartthings_auth"
     manufacturer_name?: string
+    provider?: ProviderMetadata
   },
   { value: string | string[] }
 >
@@ -83,9 +85,11 @@ export type LoginPane = Pane<
   "login_pane",
   {
     accepted_user_identifiers: Array<"email" | "phone" | "username">
+    context?: "smartthings_pre_auth"
+    default_user_identifier?: string
     provider: ProviderMetadata
   },
-  { user_identifier: string; password: string }
+  { user_identifier: string; password?: string }
 >
 
 export type InitiateTwoFactorPane = Pane<
@@ -132,7 +136,7 @@ export type FinishedPane = Pane<
     context?: {
       smartthings_auth?: {
         locations: SmartThingsLocation[]
-        oauth_redirect: string
+        oauth_redirect?: string
       }
     }
   },
