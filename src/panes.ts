@@ -133,11 +133,11 @@ export interface SmartThingsLocation {
 export type FinishedPane = Pane<
   "finished_pane",
   {
+    custom_redirect_url?: string
     context?: {
       smartthings_auth?: {
         locations: SmartThingsLocation[]
         oauth_redirect?: string
-        custom_redirect_url?: string
       }
     }
   },
