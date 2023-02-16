@@ -137,6 +137,7 @@ export type FinishedPane = Pane<
       smartthings_auth?: {
         locations: SmartThingsLocation[]
         oauth_redirect?: string
+        custom_redirect_url?: string
       }
     }
   },
