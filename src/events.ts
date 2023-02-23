@@ -114,6 +114,9 @@ export type ConnectedAccountCreated = CommonConnectedAccountEvent<
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
 
+export type ConnectedAccountCompletedFirstSync =
+  CommonConnectedAccountEvent<"connected_account.completed_first_sync">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | DeviceDisconnectEvent
@@ -131,5 +134,6 @@ export type SeamEvent =
   | ConnectedAccountConnected
   | ConnectedAccountCreated
   | ConnectedAccountDisconnected
+  | ConnectedAccountCompletedFirstSync
   | LockLockedEvent
   | LockUnlockedEvent
