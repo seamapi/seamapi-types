@@ -58,7 +58,8 @@ export type RedirectPane = Pane<
     provider?: ProviderMetadata
   },
   {
-    callback_args: Record<string, string>
+    callback_args?: Record<string, string>
+    alternative_action?: string
   }
 >
 
