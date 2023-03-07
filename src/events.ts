@@ -29,6 +29,13 @@ export type DeviceLowBatteryEvent = CommonDeviceEvent<
     battery_level: number
   }
 >
+export type DeviceBatteryStatusChanged = CommonDeviceEvent<
+  "device.battery_status_changed",
+  {
+    battery_status: string
+    battery_level: number
+  }
+>
 export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 
@@ -122,6 +129,7 @@ export type SeamEvent =
   | DeviceDisconnectEvent
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
+  | DeviceBatteryStatusChanged
   | CreateAccessCodeEvent
   | ChangeAccessCodeEvent
   | SetOnDeviceAccessCodeEvent
