@@ -74,6 +74,15 @@ export type DelayInRemovingFromDeviceAccessCodeEvent =
 export type FailedToRemoveFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_remove_from_device">
 
+export type ConvertedToManagedAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.unmanaged.converted_to_managed">
+export type FailedToConvertUnmanagedAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.unmanaged.failed_to_convert">
+export type UnmanagedAccessCodeCreatedEvent =
+  CommonAccessCodeEvent<"access_code.unmanaged.created">
+export type UnmanagedAccessCodeRemovedEvent =
+  CommonAccessCodeEvent<"access_code.unmanaged.removed">
+
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
