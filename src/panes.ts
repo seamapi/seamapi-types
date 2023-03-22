@@ -135,7 +135,7 @@ export type FinishedPane = Pane<
   "finished_pane",
   {
     custom_redirect_url?: string
-    is_completed?: boolean
+    is_final?: boolean
     context?: {
       smartthings_auth?: {
         locations: SmartThingsLocation[]
@@ -143,7 +143,9 @@ export type FinishedPane = Pane<
       }
     }
   },
-  {}
+  {
+    finalize?: boolean
+  }
 >
 
 export type AnyPane =
