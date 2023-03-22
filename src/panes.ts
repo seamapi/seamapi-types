@@ -135,6 +135,7 @@ export type FinishedPane = Pane<
   "finished_pane",
   {
     custom_redirect_url?: string
+    is_completed?: boolean
     context?: {
       smartthings_auth?: {
         locations: SmartThingsLocation[]
