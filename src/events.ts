@@ -164,6 +164,7 @@ export type SeamEvent =
   | UnmanagedAccessCodeCreatedEvent
   | UnmanagedAccessCodeRemovedEvent
   | NoiseDetectedEvent
+  | NoiseThresholdTriggeredEvent
   | ConnectedAccountConnected
   | ConnectedAccountCreated
   | ConnectedAccountDisconnected
