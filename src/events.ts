@@ -86,6 +86,18 @@ export type UnmanagedAccessCodeRemovedEvent =
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
+export type NoiseThresholdTriggeredEvent = CommonDeviceEvent<
+  "noise_sensors.noise_threshold_triggered",
+  {
+    noise_threshold_id: string
+    noise_threshold_name: string
+    noise_level_decibels: number
+
+    noise_level_nrs?: number
+    noiseaware_metadata?: Record<string, unknown>
+    minut_metadata?: Record<string, unknown>
+  }
+>
 
 // Locks
 export type LockMethod = "keycode" | "manual" | "unknown"
