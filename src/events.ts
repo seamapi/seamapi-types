@@ -77,7 +77,7 @@ export type FailedToRemoveFromDeviceAccessCodeEvent =
 export type ConvertedToManagedAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.unmanaged.converted_to_managed">
 export type FailedToConvertUnmanagedAccessCodeEvent =
-  CommonAccessCodeEvent<"access_code.unmanaged.failed_to_convert">
+  CommonAccessCodeEvent<"access_code.unmanaged.failed_to_convert_to_managed">
 export type UnmanagedAccessCodeCreatedEvent =
   CommonAccessCodeEvent<"access_code.unmanaged.created">
 export type UnmanagedAccessCodeRemovedEvent =
