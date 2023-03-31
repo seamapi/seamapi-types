@@ -86,11 +86,11 @@ export type LoginPane = Pane<
   "login_pane",
   {
     accepted_user_identifiers: Array<"email" | "phone" | "username">
-    context?: "smartthings_pre_auth"
+    context?: "smartthings_pre_auth" | "igloo_developer_auth"
     default_user_identifier?: string
     provider: ProviderMetadata
   },
-  { user_identifier: string; password?: string }
+  { user_identifier: string; password?: string; api_key?: string }
 >
 
 export type InitiateTwoFactorPane = Pane<
