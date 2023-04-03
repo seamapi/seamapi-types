@@ -86,6 +86,7 @@ export type LoginPane = Pane<
   "login_pane",
   {
     accepted_user_identifiers: Array<"email" | "phone" | "username">
+    context?: "smartthings_pre_auth"
     credential?: "password" | "api_key"
     default_user_identifier?: string
     provider: ProviderMetadata
