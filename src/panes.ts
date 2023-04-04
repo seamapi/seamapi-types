@@ -41,6 +41,8 @@ type Pane<
   last_updated_at: string
 }
 
+export type ConsentPane = Pane<"consent_pane", {}, {}>
+
 export type LoadingPane = Pane<
   "loading",
   {
@@ -150,6 +152,7 @@ export type FinishedPane = Pane<
 >
 
 export type AnyPane =
+  | ConsentPane
   | LoadingPane
   | RedirectPane
   | SearchAndSelectPane
