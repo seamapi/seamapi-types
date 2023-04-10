@@ -82,6 +82,21 @@ export type SearchAndSelectPane = Pane<
   { value: string | string[] }
 >
 
+export type BrandSelectPane = Pane<
+  "brand_select_pane",
+  {
+    options: Array<{
+      label: string
+      sublabel?: string
+      value: string
+      image_url: string
+    }>
+  },
+  {
+    brand: string
+  }
+>
+
 export type LoginPane = Pane<
   "login_pane",
   {
@@ -153,6 +168,7 @@ export type AnyPane =
   | LoadingPane
   | RedirectPane
   | SearchAndSelectPane
+  | BrandSelectPane
   | LoginPane
   | InitiateTwoFactorPane
   | TwoFactorPane
