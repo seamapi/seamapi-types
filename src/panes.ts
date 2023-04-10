@@ -82,6 +82,14 @@ export type SearchAndSelectPane = Pane<
   { value: string | string[] }
 >
 
+export type BrandSelectPane = Pane<
+  "brand_select_pane",
+  {},
+  {
+    brand: string
+  }
+>
+
 export type LoginPane = Pane<
   "login_pane",
   {
