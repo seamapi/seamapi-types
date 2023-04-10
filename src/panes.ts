@@ -89,7 +89,7 @@ export type BrandSelectPane = Pane<
       label: string
       sublabel?: string
       value: string
-      image_url?: string
+      image_url: string
     }>
   },
   {
