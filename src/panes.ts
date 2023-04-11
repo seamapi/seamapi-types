@@ -37,7 +37,7 @@ type Pane<
     scheduling_link?: string
   }
   submit_props: PaneSubmitProps
-  /** Timestamp last time pane was changed in ISO8601 format */
+  /* Timestamp last time pane was changed in ISO8601 format */
   last_updated_at: string
 }
 
