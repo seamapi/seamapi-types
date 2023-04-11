@@ -4,6 +4,7 @@ export type Field<Type extends string, Props, Input> = {
     is_required: boolean
     name: string
     type: Type
+    is_disabled?: boolean
   } & Props
   input: Input
 }
@@ -13,6 +14,7 @@ export type TextField = Field<
   {
     placeholder: string
     regex?: string
+    value?: string
     text_type?: "text" | "password" | "email" | "number" | "tel" | "url"
   },
   string
