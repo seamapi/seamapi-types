@@ -5,7 +5,7 @@ Shared Typescript types for using the [Seam Connect API](https://github.com/seam
 ## Usage
 
 ```ts
-import { SeamEvent, DeviceConnectedEvent, DeviceDisconnectedEvent } from "seamapi-types"
+import { SeamEvent, DeviceConnectedEvent, DeviceDisconnectEvent } from "seamapi-types"
 
 // You can now use these types in your code!
 ```
