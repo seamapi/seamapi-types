@@ -14,7 +14,7 @@ export type TextField = Field<
   {
     placeholder: string
     regex?: string
-    value?: string
+    default_value?: string
     text_type?: "text" | "password" | "email" | "number" | "tel" | "url"
   },
   string
