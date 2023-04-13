@@ -157,6 +157,9 @@ export type FinishedPane = Pane<
         locations: SmartThingsLocation[]
         oauth_redirect?: string
       }
+      igloodeveloper_auth?: {
+        igloo_webhook_url: string
+      }
     }
   },
   {
