@@ -87,7 +87,7 @@ export type UnmanagedAccessCodeRemovedEvent =
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
 export type NoiseThresholdTriggeredEvent = CommonDeviceEvent<
-  "noise_sensors.noise_threshold_triggered",
+  "noise_sensor.noise_threshold_triggered",
   {
     noise_threshold_id: string
     noise_threshold_name: string
