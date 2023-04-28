@@ -37,7 +37,7 @@ type Pane<
     scheduling_link?: string
   }
   submit_props: PaneSubmitProps
-  /** Timestamp last time pane was changed in ISO8601 format */
+  /* Timestamp last time pane was changed in ISO8601 format */
   last_updated_at: string
 }
 
@@ -82,15 +82,31 @@ export type SearchAndSelectPane = Pane<
   { value: string | string[] }
 >
 
+export type BrandSelectPane = Pane<
+  "brand_select_pane",
+  {
+    options: Array<{
+      label: string
+      sublabel?: string
+      value: string
+      image_url: string
+    }>
+  },
+  {
+    brand: string
+  }
+>
+
 export type LoginPane = Pane<
   "login_pane",
   {
     accepted_user_identifiers: Array<"email" | "phone" | "username">
     context?: "smartthings_pre_auth" | "kwikset_no_mfa_auth"
+    credential?: "password" | "api_key"
     default_user_identifier?: string
     provider: ProviderMetadata
   },
-  { user_identifier: string; password?: string }
+  { user_identifier: string; password?: string; api_key?: string }
 >
 
 export type InitiateTwoFactorPane = Pane<
@@ -135,20 +151,27 @@ export type FinishedPane = Pane<
   "finished_pane",
   {
     custom_redirect_url?: string
+    is_final?: boolean
     context?: {
       smartthings_auth?: {
         locations: SmartThingsLocation[]
         oauth_redirect?: string
       }
+      igloodeveloper_auth?: {
+        igloo_webhook_url: string
+      }
     }
   },
-  {}
+  {
+    finalize?: boolean
+  }
 >
 
 export type AnyPane =
   | LoadingPane
   | RedirectPane
   | SearchAndSelectPane
+  | BrandSelectPane
   | LoginPane
   | InitiateTwoFactorPane
   | TwoFactorPane
