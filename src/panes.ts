@@ -33,6 +33,7 @@ type Pane<
   name: Name
   render_props: PaneRenderProps & {
     error_msg?: string
+    notice_msg?: string
     error_code?: WebviewFlowErrorCode
     scheduling_link?: string
   }
@@ -101,7 +102,8 @@ export type LoginPane = Pane<
   "login_pane",
   {
     accepted_user_identifiers: Array<"email" | "phone" | "username">
-    context?: "smartthings_pre_auth" | "kwikset_no_mfa_auth"
+    /** @deprecated - use a more specific property than context: string for dynamic rendering logic */
+    context?: "smartthings_pre_auth"
     credential?: "password" | "api_key"
     default_user_identifier?: string
     provider: ProviderMetadata
