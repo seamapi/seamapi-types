@@ -80,7 +80,7 @@ jobs:
           write-mode: overwrite
           path: index.js
           contents: |
-            require('@seamapi/makenew-tsmodule')
+            require('seamapi-types')
       - name: Install
         run: npm install --ignore-scripts --save ${{ steps.packages.outputs.paths }}
         env:
