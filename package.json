@@ -21,8 +21,9 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --dts",
+    "typecheck": "tsc",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "lint": "prettier --check .",
     "test": "npm run format:check"
   }
 }
