@@ -10,10 +10,6 @@
   "author": "Max Isom <hi@maxisom.me>",
   "license": "MIT",
   "devDependencies": {
-    "@semantic-release/commit-analyzer": "9.0.2",
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/npm": "9.0.1",
-    "@semantic-release/release-notes-generator": "10.0.3",
     "prettier": "2.6.0",
     "tsup": "5.12.1",
     "type-fest": "2.12.2",
