@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --dts",
+    "postversion": "git push --follow-tags",
     "typecheck": "tsc",
     "format": "prettier --write .",
     "lint": "prettier --check .",
