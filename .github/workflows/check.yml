@@ -24,7 +24,6 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node_version: ${{ matrix.node }}
-          node_auth_token: ${{ secrets.GH_TOKEN }}
       - name: Lint
         run: npm run lint
   build:
@@ -82,18 +81,7 @@ jobs:
           contents: |
             require('seamapi-types')
       - name: Install
-        run: npm install --ignore-scripts --save ${{ steps.packages.outputs.paths }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Rebuild Node.js modules
-        shell: bash
-        run: npm rebuild
-      - name: Run postinstall script
-        shell: bash
-        run: npm run postinstall --if-present
-      - name: Run prepare script
-        shell: bash
-        run: npm run prepare --if-present
+        run: npm install --save ${{ steps.packages.outputs.paths }}
       - name: Run
         run: node index.js
   typecheck:
@@ -113,6 +101,5 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node_version: ${{ matrix.node }}
-          node_auth_token: ${{ secrets.GH_TOKEN }}
       - name: Check types
         run: npm run typecheck
