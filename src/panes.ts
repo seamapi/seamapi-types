@@ -55,7 +55,7 @@ export type RedirectPane = Pane<
   {
     redirect_url: string
     pre_redirect_acknowledgement?: boolean
-    context?: "smartthings_auth"
+    context?: "smartthings_auth" | "oauth_redirect"
     provider?: ProviderMetadata
   },
   {
