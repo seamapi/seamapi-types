@@ -89,11 +89,6 @@ export type NoiseDetectedEvent =
 export type NoiseThresholdTriggeredEvent = CommonDeviceEvent<
   "noise_sensor.noise_threshold_triggered",
   {
-    noise_threshold_id: string
-    noise_threshold_name: string
-    noise_level_decibels: number
-
-    noise_level_nrs?: number
     noiseaware_metadata?: Record<string, unknown>
     minut_metadata?: Record<string, unknown>
   }
