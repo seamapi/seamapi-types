@@ -38,6 +38,7 @@ export type DeviceBatteryStatusChanged = CommonDeviceEvent<
 >
 export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
+export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
 
 // Access codes
 export interface CommonAccessCodeEvent<
@@ -146,6 +147,7 @@ export type SeamEvent =
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | DeviceBatteryStatusChanged
+  | DeviceRemovedEvent
   | CreateAccessCodeEvent
   | ChangeAccessCodeEvent
   | SetOnDeviceAccessCodeEvent
