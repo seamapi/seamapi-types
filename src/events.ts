@@ -151,7 +151,9 @@ export type ConnectedAccountCompletedFirstSync =
 
 export type SeamEvent =
   | DeviceConnectedEvent
+  | UnmanagedDeviceConnectedEvent
   | DeviceDisconnectEvent
+  | UnmanagedDeviceDisconnectEvent
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | DeviceBatteryStatusChanged
