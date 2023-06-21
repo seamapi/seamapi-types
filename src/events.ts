@@ -11,16 +11,24 @@ export interface CommonDeviceEvent<
   created_at: string
 }
 
+type DeviceDisconnectEventPayload = {
+  error_code:
+    | "account_disconnected"
+    | "hub_disconnected"
+    | "device_disconnected"
+}
+
 // Devices
 export type DeviceConnectedEvent = CommonDeviceEvent<"device.connected">
+export type UnmanagedDeviceConnectedEvent =
+  CommonDeviceEvent<"device.unmanaged.connected">
 export type DeviceDisconnectEvent = CommonDeviceEvent<
   "device.disconnected",
-  {
-    error_code:
-      | "account_disconnected"
-      | "hub_disconnected"
-      | "device_disconnected"
-  }
+  DeviceDisconnectEventPayload
+>
+export type UnmanagedDeviceDisconnectEvent = CommonDeviceEvent<
+  "device.unmanaged.disconnected",
+  DeviceDisconnectEventPayload
 >
 export type DeviceTamperEvent = CommonDeviceEvent<"device.tampered">
 export type DeviceLowBatteryEvent = CommonDeviceEvent<
