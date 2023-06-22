@@ -70,6 +70,8 @@ interface DetailedAccessCodeEvent<
 
 export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
+export type ScheduledOnDeviceAccessCodeEvent =
+  DetailedAccessCodeEvent<"access_code.scheduled_on_device">
 export type SetOnDeviceAccessCodeEvent =
   DetailedAccessCodeEvent<"access_code.set_on_device">
 export type RemovedFromDeviceAccessCodeEvent =
@@ -160,6 +162,7 @@ export type SeamEvent =
   | DeviceRemovedEvent
   | CreateAccessCodeEvent
   | ChangeAccessCodeEvent
+  | ScheduledOnDeviceAccessCodeEvent
   | SetOnDeviceAccessCodeEvent
   | RemovedFromDeviceAccessCodeEvent
   | FailedToRemoveFromDeviceAccessCodeEvent
