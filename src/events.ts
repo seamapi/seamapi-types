@@ -9,6 +9,7 @@ export interface CommonDeviceEvent<
     device_id: string
   }
   created_at: string
+  occurred_at: string
 }
 
 type DeviceDisconnectEventPayload = {
