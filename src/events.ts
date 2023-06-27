@@ -51,10 +51,11 @@ export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
 
 // Access codes
 export interface CommonAccessCodeEvent<
-  EventType extends string
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
 > extends CommonDeviceEvent<
     EventType,
-    {
+    Payload & {
       access_code_id: string
     }
   > {}
@@ -86,8 +87,12 @@ export type DelayInRemovingFromDeviceAccessCodeEvent =
 export type FailedToRemoveFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_remove_from_device">
 
-export type BackupAccessCodePulledEvent =
-  CommonAccessCodeEvent<"access_code.backup_access_code_pulled">
+export type BackupAccessCodePulledEvent = CommonAccessCodeEvent<
+  "access_code.backup_access_code_pulled",
+  {
+    backup_access_code_id: string
+  }
+>
 
 export type ConvertedToManagedAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.unmanaged.converted_to_managed">
