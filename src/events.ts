@@ -9,6 +9,7 @@ export interface CommonDeviceEvent<
     device_id: string
   }
   created_at: string
+  occurred_at: string
 }
 
 type DeviceDisconnectEventPayload = {
@@ -133,6 +134,7 @@ export interface CommonConnectedAccountEvent<
     connected_account_id: string
   }
   created_at: string
+  occurred_at: string
 }
 
 export type ConnectedAccountConnected = CommonConnectedAccountEvent<
