@@ -86,6 +86,9 @@ export type DelayInRemovingFromDeviceAccessCodeEvent =
 export type FailedToRemoveFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_remove_from_device">
 
+export type BackupAccessCodePulledEvent =
+  CommonAccessCodeEvent<"access_code.backup_access_code_pulled">
+
 export type ConvertedToManagedAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.unmanaged.converted_to_managed">
 export type FailedToConvertUnmanagedAccessCodeEvent =
@@ -171,6 +174,7 @@ export type SeamEvent =
   | DelayInRemovingFromDeviceAccessCodeEvent
   | FailedToSetOnDeviceAccessCodeEvent
   | DelayInSettingOnDeviceAccessCodeEvent
+  | BackupAccessCodePulledEvent
   | ConvertedToManagedAccessCodeEvent
   | FailedToConvertUnmanagedAccessCodeEvent
   | UnmanagedAccessCodeCreatedEvent
