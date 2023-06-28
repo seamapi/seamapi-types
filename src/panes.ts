@@ -107,7 +107,7 @@ export type LoginPane = Pane<
     >
     /** @deprecated - use a more specific property than context for dynamic rendering logic */
     context?: "smartthings_pre_auth"
-    credential?: "password" | "api_key"
+    credential?: "password" | "api_key" | "access_token"
     default_user_identifier?: string
     provider: ProviderMetadata
   },
