@@ -102,7 +102,9 @@ export type BrandSelectPane = Pane<
 export type LoginPane = Pane<
   "login_pane",
   {
-    accepted_user_identifiers: Array<"email" | "phone" | "username" | "cloud_url">
+    accepted_user_identifiers: Array<
+      "email" | "phone" | "username" | "cloud_url"
+    >
     /** @deprecated - use a more specific property than context for dynamic rendering logic */
     context?: "smartthings_pre_auth"
     credential?: "password" | "api_key"
