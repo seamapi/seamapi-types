@@ -172,6 +172,8 @@ export type SeamEvent =
   | UnmanagedDeviceConnectedEvent
   | DeviceDisconnectEvent
   | UnmanagedDeviceDisconnectEvent
+  | DeviceConvertedToUnmanagedEvent
+  | UnmanagedDeviceConvertedToManagedEvent
   | DeviceTamperEvent
   | DeviceLowBatteryEvent
   | DeviceBatteryStatusChanged
