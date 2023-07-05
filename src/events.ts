@@ -21,6 +21,12 @@ type DeviceDisconnectEventPayload = {
 
 // Devices
 export type DeviceConnectedEvent = CommonDeviceEvent<"device.connected">
+
+export type DeviceConvertedToUnmanagedEvent =
+  CommonDeviceEvent<"device.converted_to_unmanaged">
+export type UnmanagedDeviceConvertedToManagedEvent =
+  CommonDeviceEvent<"device.unmanaged.converted_to_managed">
+
 export type UnmanagedDeviceConnectedEvent =
   CommonDeviceEvent<"device.unmanaged.connected">
 export type DeviceDisconnectEvent = CommonDeviceEvent<
