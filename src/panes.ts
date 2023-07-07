@@ -136,7 +136,7 @@ export type FieldsPane = Pane<
   "fields_pane",
   {
     fields: AnyField["props"][]
-    context?: "brivo_auth"
+    context?: "brivo_auth" | "hubitat_auth"
     submit_label?: string
     header: {
       title: string
