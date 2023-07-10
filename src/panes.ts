@@ -141,6 +141,7 @@ export type FieldsPane = Pane<
     header: {
       title: string
       provider?: ProviderMetadata
+      description?: string
     }
   },
   Record<string, AnyField["input"]>

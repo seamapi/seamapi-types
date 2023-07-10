@@ -5,6 +5,8 @@ export type Field<Type extends string, Props, Input> = {
     name: string
     type: Type
     is_disabled?: boolean
+    help_link?: string
+    help_text?: string
   } & Props
   input: Input
 }
