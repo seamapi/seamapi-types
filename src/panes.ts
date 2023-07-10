@@ -142,8 +142,6 @@ export type FieldsPane = Pane<
       title: string
       provider?: ProviderMetadata
     }
-    help_link?: string
-    help_text?: string
   },
   Record<string, AnyField["input"]>
 >
