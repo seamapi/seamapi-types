@@ -166,9 +166,8 @@ export type ConnectedAccountCreated = CommonConnectedAccountEvent<
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
 
-export type ConnectedAccountDeleted = CommonConnectedAccountEvent<
-  "connected_account.deleted"
->
+export type ConnectedAccountDeleted =
+  CommonConnectedAccountEvent<"connected_account.deleted">
 
 export type ConnectedAccountCompletedFirstSync =
   CommonConnectedAccountEvent<"connected_account.completed_first_sync">
