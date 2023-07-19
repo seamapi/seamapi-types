@@ -51,6 +51,7 @@ export type DeviceBatteryStatusChanged = CommonDeviceEvent<
     battery_level: number
   }
 >
+export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
@@ -163,6 +164,8 @@ export type ConnectedAccountCreated = CommonConnectedAccountEvent<
 
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
+export type ConnectedAccountDeleted =
+  CommonConnectedAccountEvent<"connected_account.deleted">
 
 export type ConnectedAccountCompletedFirstSync =
   CommonConnectedAccountEvent<"connected_account.completed_first_sync">
