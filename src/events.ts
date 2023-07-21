@@ -84,6 +84,8 @@ export type SetOnDeviceAccessCodeEvent =
   DetailedAccessCodeEvent<"access_code.set_on_device">
 export type RemovedFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.removed_from_device">
+export type DeletedAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.deleted">
 export type DelayInSettingOnDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_setting_on_device">
 export type FailedToSetOnDeviceAccessCodeEvent =
@@ -183,6 +185,7 @@ export type SeamEvent =
   | ScheduledOnDeviceAccessCodeEvent
   | SetOnDeviceAccessCodeEvent
   | RemovedFromDeviceAccessCodeEvent
+  | DeletedAccessCodeEvent
   | FailedToRemoveFromDeviceAccessCodeEvent
   | DelayInRemovingFromDeviceAccessCodeEvent
   | FailedToSetOnDeviceAccessCodeEvent
