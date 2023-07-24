@@ -76,17 +76,6 @@ interface DetailedAccessCodeEvent<
     }
   > {}
 
-type DeletedAccessCodeEvent =  {
-  event_type: "access_code.deleted";
-  payload: Payload & {
-      workspace_id: string;
-      access_code_id: string;
-      code?: string;
-  };
-  created_at: string;
-  occurred_at: string;
-}
-
 export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
 export type ScheduledOnDeviceAccessCodeEvent =
@@ -99,6 +88,7 @@ export type DelayInSettingOnDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_setting_on_device">
 export type FailedToSetOnDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_set_on_device">
+export type DeletedAccessCodeEvent = CommonAccessCodeEvent<"access_code.deleted">;
 export type DelayInRemovingFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_removing_from_device">
 export type FailedToRemoveFromDeviceAccessCodeEvent =
