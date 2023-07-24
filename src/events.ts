@@ -76,15 +76,15 @@ interface DetailedAccessCodeEvent<
     }
   > {}
 
-type DeletedAccessCodeEvent =  {
-  event_type: "access_code.deleted";
+type DeletedAccessCodeEvent = {
+  event_type: "access_code.deleted"
   payload: {
-      workspace_id: string;
-      access_code_id: string;
-      code?: string;
-  };
-  created_at: string;
-  occurred_at: string;
+    workspace_id: string
+    access_code_id: string
+    code?: string
+  }
+  created_at: string
+  occurred_at: string
 }
 
 export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
