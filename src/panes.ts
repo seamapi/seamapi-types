@@ -166,6 +166,12 @@ export type FinishedPane = Pane<
         igloo_webhook_url: string
       }
     }
+    shared_devices_from_other_accounts?: {
+      name: string
+      image_url: string
+      display_name: string
+    }[]
+    total_device_count?: number
   },
   {
     finalize?: boolean
