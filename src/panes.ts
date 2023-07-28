@@ -172,6 +172,7 @@ export type FinishedPane = Pane<
       display_name: string
     }[]
     total_device_count?: number
+    was_account_reconnected?: boolean
   },
   {
     finalize?: boolean
