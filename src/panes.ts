@@ -108,8 +108,14 @@ export type LoginPane = Pane<
     credential?: "password" | "api_key"
     default_user_identifier?: string
     provider: ProviderMetadata
+    additional_fields?: AnyField["props"][]
   },
-  { user_identifier: string; password?: string; api_key?: string }
+  {
+    user_identifier: string
+    password?: string
+    api_key?: string
+    additional_fields?: Record<string, string>
+  }
 >
 
 export type InitiateTwoFactorPane = Pane<

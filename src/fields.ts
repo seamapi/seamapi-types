@@ -14,7 +14,7 @@ export type Field<Type extends string, Props, Input> = {
 export type TextField = Field<
   "text",
   {
-    placeholder: string
+    placeholder?: string
     regex?: string
     default_value?: string
     text_type?: "text" | "password" | "email" | "number" | "tel" | "url"
