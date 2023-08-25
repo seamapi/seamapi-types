@@ -55,6 +55,8 @@ export type DeviceCodeLimitReachedEvent =
   CommonDeviceEvent<"device.code_limit_reached">
 export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
 
+export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
+
 // Access codes
 export interface CommonAccessCodeEvent<
   EventType extends string,
@@ -169,6 +171,9 @@ export type ConnectedAccountDisconnected =
 export type ConnectedAccountCompletedFirstSync =
   CommonConnectedAccountEvent<"connected_account.completed_first_sync">
 
+export type ConnectedAccountDeleted =
+  CommonConnectedAccountEvent<"connected_account.deleted">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | UnmanagedDeviceConnectedEvent
@@ -201,5 +206,6 @@ export type SeamEvent =
   | ConnectedAccountCreated
   | ConnectedAccountDisconnected
   | ConnectedAccountCompletedFirstSync
+  | ConnectedAccountDeleted
   | LockLockedEvent
   | LockUnlockedEvent
