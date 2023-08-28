@@ -96,6 +96,8 @@ export type DelayInRemovingFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_removing_from_device">
 export type FailedToRemoveFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_remove_from_device">
+export type ExternalModificationAccessCodeEvent =
+  CommonAccessCodeEvent<"access_code.modified_external_to_seam">
 
 export type BackupAccessCodePulledEvent = CommonAccessCodeEvent<
   "access_code.backup_access_code_pulled",
@@ -200,6 +202,7 @@ export type SeamEvent =
   | FailedToConvertUnmanagedAccessCodeEvent
   | UnmanagedAccessCodeCreatedEvent
   | UnmanagedAccessCodeRemovedEvent
+  | ExternalModificationAccessCodeEvent
   | NoiseDetectedEvent
   | NoiseThresholdTriggeredEvent
   | ConnectedAccountConnected
