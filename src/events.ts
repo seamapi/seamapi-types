@@ -167,6 +167,11 @@ export type ConnectedAccountCreated = CommonConnectedAccountEvent<
   { connect_webview_id: string }
 >
 
+export type ConnectedAccountSuccessfulLogin = CommonConnectedAccountEvent<
+  "connected_account.successful_login",
+  { connect_webview_id: string }
+>
+
 export type ConnectedAccountDisconnected =
   CommonConnectedAccountEvent<"connected_account.disconnected">
 
