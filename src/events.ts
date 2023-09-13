@@ -211,6 +211,7 @@ export type SeamEvent =
   | NoiseDetectedEvent
   | NoiseThresholdTriggeredEvent
   | ConnectedAccountConnected
+  | ConnectedAccountSuccessfulLogin
   | ConnectedAccountCreated
   | ConnectedAccountDisconnected
   | ConnectedAccountCompletedFirstSync
