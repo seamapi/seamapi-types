@@ -59,6 +59,11 @@ export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 
 export type DeviceThirdPartyIntegrationDetected =
   CommonDeviceEvent<"device.third_party_integration_detected">
+export type DeviceSaltoPrivacyModeActivated =
+  CommonDeviceEvent<"device.salto.privacy_mode_activated">
+
+export type DeviceSaltoPrivacyModedeactivated =
+  CommonDeviceEvent<"device.salto.privacy_mode_deactivated">
 
 // Access codes
 export interface CommonAccessCodeEvent<
@@ -222,3 +227,5 @@ export type SeamEvent =
   | LockLockedEvent
   | LockUnlockedEvent
   | DeviceThirdPartyIntegrationDetected
+  | DeviceSaltoPrivacyModeActivated
+  | DeviceSaltoPrivacyModedeactivated
