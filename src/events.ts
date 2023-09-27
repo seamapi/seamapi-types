@@ -57,6 +57,12 @@ export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
 
 export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 
+export type DeviceSaltoPrivacyModeActivated =
+  CommonDeviceEvent<"device.salto.privacy_mode_activated">
+
+export type DeviceSaltoPrivacyModedeactivated =
+  CommonDeviceEvent<"device.salto.privacy_mode_deactivated">
+
 // Access codes
 export interface CommonAccessCodeEvent<
   EventType extends string,
@@ -218,3 +224,5 @@ export type SeamEvent =
   | ConnectedAccountDeleted
   | LockLockedEvent
   | LockUnlockedEvent
+  | DeviceSaltoPrivacyModeActivated
+  | DeviceSaltoPrivacyModedeactivated
