@@ -57,6 +57,8 @@ export type DeviceRemovedEvent = CommonDeviceEvent<"device.removed">
 
 export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 
+export type DeviceThirdPartyIntegrationDetected =
+  CommonDeviceEvent<"device.third_party_integration_detected">
 export type DeviceSaltoPrivacyModeActivated =
   CommonDeviceEvent<"device.salto.privacy_mode_activated">
 
@@ -224,5 +226,6 @@ export type SeamEvent =
   | ConnectedAccountDeleted
   | LockLockedEvent
   | LockUnlockedEvent
+  | DeviceThirdPartyIntegrationDetected
   | DeviceSaltoPrivacyModeActivated
   | DeviceSaltoPrivacyModedeactivated
