@@ -1,7 +1,7 @@
 export interface CommonDeviceEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> {
+  > {
   event_type: EventType
   payload: Payload & {
     workspace_id: string
@@ -14,9 +14,9 @@ export interface CommonDeviceEvent<
 
 type DeviceDisconnectEventPayload = {
   error_code:
-    | "account_disconnected"
-    | "hub_disconnected"
-    | "device_disconnected"
+  | "account_disconnected"
+  | "hub_disconnected"
+  | "device_disconnected"
 }
 
 // Devices
@@ -59,32 +59,41 @@ export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 
 export type DeviceThirdPartyIntegrationDetected =
   CommonDeviceEvent<"device.third_party_integration_detected">
+export type DeviceThirdPartyIntegrationNoLongerDetected =
+  CommonDeviceEvent<"device.third_party_integration_no_longer_detected">
+
 export type DeviceSaltoPrivacyModeActivated =
   CommonDeviceEvent<"device.salto.privacy_mode_activated">
 
 export type DeviceSaltoPrivacyModedeactivated =
   CommonDeviceEvent<"device.salto.privacy_mode_deactivated">
 
+export type DeviceConnectionBecameFlaky =
+  CommonDeviceEvent<"device.connection_became_flaky">
+
+export type DeviceConnectionStabilized =
+  CommonDeviceEvent<"device.connection_stabilized">
+
 // Access codes
 export interface CommonAccessCodeEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> extends CommonDeviceEvent<
-    EventType,
-    Payload & {
-      access_code_id: string
-    }
-  > {}
+  > extends CommonDeviceEvent<
+  EventType,
+  Payload & {
+    access_code_id: string
+  }
+  > { }
 
 interface DetailedAccessCodeEvent<
   EventType extends string
-> extends CommonDeviceEvent<
-    EventType,
-    {
-      access_code_id: string
-      code: string
-    }
-  > {}
+  > extends CommonDeviceEvent<
+  EventType,
+  {
+    access_code_id: string
+    code: string
+  }
+  > { }
 
 export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
@@ -155,7 +164,7 @@ export type LockUnlockedEvent = CommonDeviceEvent<
 export interface CommonConnectedAccountEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> {
+  > {
   event_type: EventType
   payload: Payload & {
     workspace_id: string
@@ -227,5 +236,8 @@ export type SeamEvent =
   | LockLockedEvent
   | LockUnlockedEvent
   | DeviceThirdPartyIntegrationDetected
+  | DeviceThirdPartyIntegrationNoLongerDetected
   | DeviceSaltoPrivacyModeActivated
   | DeviceSaltoPrivacyModedeactivated
+  | DeviceConnectionBecameFlaky
+  | DeviceConnectionStabilized
