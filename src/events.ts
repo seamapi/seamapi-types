@@ -59,11 +59,20 @@ export type DeviceDeletedEvent = CommonDeviceEvent<"device.deleted">
 
 export type DeviceThirdPartyIntegrationDetected =
   CommonDeviceEvent<"device.third_party_integration_detected">
+export type DeviceThirdPartyIntegrationNoLongerDetected =
+  CommonDeviceEvent<"device.third_party_integration_no_longer_detected">
+
 export type DeviceSaltoPrivacyModeActivated =
   CommonDeviceEvent<"device.salto.privacy_mode_activated">
 
 export type DeviceSaltoPrivacyModedeactivated =
   CommonDeviceEvent<"device.salto.privacy_mode_deactivated">
+
+export type DeviceConnectionBecameFlaky =
+  CommonDeviceEvent<"device.connection_became_flaky">
+
+export type DeviceConnectionStabilized =
+  CommonDeviceEvent<"device.connection_stabilized">
 
 // Access codes
 export interface CommonAccessCodeEvent<
@@ -227,5 +236,8 @@ export type SeamEvent =
   | LockLockedEvent
   | LockUnlockedEvent
   | DeviceThirdPartyIntegrationDetected
+  | DeviceThirdPartyIntegrationNoLongerDetected
   | DeviceSaltoPrivacyModeActivated
   | DeviceSaltoPrivacyModedeactivated
+  | DeviceConnectionBecameFlaky
+  | DeviceConnectionStabilized
