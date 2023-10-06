@@ -44,10 +44,13 @@ export type DeviceLowBatteryEvent = CommonDeviceEvent<
     battery_level: number
   }
 >
+
+export type DeviceBatteryStatus = "critical" | "low" | "good" | "full"
+
 export type DeviceBatteryStatusChanged = CommonDeviceEvent<
   "device.battery_status_changed",
   {
-    battery_status: string
+    battery_status: DeviceBatteryStatus
     battery_level: number
   }
 >
