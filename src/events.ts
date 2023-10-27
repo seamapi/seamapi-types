@@ -98,7 +98,9 @@ interface DetailedAccessCodeEvent<
   }
   > { }
 
-export type CreateAccessCodeEvent = DetailedAccessCodeEvent<"access_code.created">
+export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created", {
+  code?: string
+}>
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
 export type ScheduledOnDeviceAccessCodeEvent =
   DetailedAccessCodeEvent<"access_code.scheduled_on_device">
@@ -111,7 +113,9 @@ export type DelayInSettingOnDeviceAccessCodeEvent =
 export type FailedToSetOnDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_set_on_device">
 export type DeletedAccessCodeEvent =
-  DetailedAccessCodeEvent<"access_code.deleted">
+  CommonAccessCodeEvent<"access_code.deleted", {
+    code?: string
+  }>
 export type DelayInRemovingFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_removing_from_device">
 export type FailedToRemoveFromDeviceAccessCodeEvent =
