@@ -1,7 +1,7 @@
 export interface CommonDeviceEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> {
+  > {
   event_type: EventType
   payload: Payload & {
     workspace_id: string
@@ -14,9 +14,9 @@ export interface CommonDeviceEvent<
 
 type DeviceDisconnectEventPayload = {
   error_code:
-    | "account_disconnected"
-    | "hub_disconnected"
-    | "device_disconnected"
+  | "account_disconnected"
+  | "hub_disconnected"
+  | "device_disconnected"
 }
 
 // Devices
@@ -81,26 +81,24 @@ export type DeviceConnectionStabilized =
 export interface CommonAccessCodeEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> extends CommonDeviceEvent<
-    EventType,
-    Payload & {
-      access_code_id: string
-    }
-  > {}
+  > extends CommonDeviceEvent<
+  EventType,
+  Payload & {
+    access_code_id: string
+  }
+  > { }
 
 interface DetailedAccessCodeEvent<
   EventType extends string
-> extends CommonDeviceEvent<
-    EventType,
-    {
-      access_code_id: string
-      code: string
-    }
-  > {}
+  > extends CommonDeviceEvent<
+  EventType,
+  {
+    access_code_id: string
+    code: string
+  }
+  > { }
 
-export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created", {
-  code?: string
-}>
+export type CreateAccessCodeEvent = CommonAccessCodeEvent<"access_code.created">
 export type ChangeAccessCodeEvent = CommonAccessCodeEvent<"access_code.changed">
 export type ScheduledOnDeviceAccessCodeEvent =
   DetailedAccessCodeEvent<"access_code.scheduled_on_device">
@@ -113,9 +111,7 @@ export type DelayInSettingOnDeviceAccessCodeEvent =
 export type FailedToSetOnDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.failed_to_set_on_device">
 export type DeletedAccessCodeEvent =
-  CommonAccessCodeEvent<"access_code.deleted", {
-    code?: string
-  }>
+  DetailedAccessCodeEvent<"access_code.deleted">
 export type DelayInRemovingFromDeviceAccessCodeEvent =
   CommonAccessCodeEvent<"access_code.delay_in_removing_from_device">
 export type FailedToRemoveFromDeviceAccessCodeEvent =
@@ -173,7 +169,7 @@ export type LockUnlockedEvent = CommonDeviceEvent<
 export interface CommonConnectedAccountEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> {
+  > {
   event_type: EventType
   payload: Payload & {
     workspace_id: string
