@@ -158,9 +158,10 @@ export type FinishedPane = Pane<
     custom_redirect_url?: string
     is_final?: boolean
     context?: {
-      warning?: {
-        warning_title: string
-        warning_description: string
+      nuki_smart_hosting?: {
+        connected_devices_count: number
+        not_connected_devices_count: number
+        nuki_smart_hosting_url: string
       }
       smartthings_auth?: {
         locations: SmartThingsLocation[]
