@@ -77,6 +77,12 @@ export type DeviceConnectionBecameFlaky =
 export type DeviceConnectionStabilized =
   CommonDeviceEvent<"device.connection_stabilized">
 
+export type DeviceErrorSubscriptionRequired =
+  CommonDeviceEvent<"device.error.subscription_required">
+
+export type DeviceErrorSubscriptionRequiredResolved =
+  CommonDeviceEvent<"device.error.subscription_required.resolved">
+
 // Access codes
 export interface CommonAccessCodeEvent<
   EventType extends string,
@@ -251,3 +257,5 @@ export type SeamEvent =
   | DeviceSaltoPrivacyModedeactivated
   | DeviceConnectionBecameFlaky
   | DeviceConnectionStabilized
+  | DeviceErrorSubscriptionRequired
+  | DeviceErrorSubscriptionRequiredResolved
