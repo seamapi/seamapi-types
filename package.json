@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.30.0",
+  "version": "1.31.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "seamapi/seamapi-types",
