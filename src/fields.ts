@@ -22,6 +22,16 @@ export type TextField = Field<
   string
 >
 
+export type TextAreaField = Field<
+  "textarea",
+  {
+    placeholder: string
+    regex?: string
+    default_value?: string
+  },
+  string
+>
+
 export type SelectionField = Field<
   "selection",
   {
@@ -33,4 +43,4 @@ export type SelectionField = Field<
   string
 >
 
-export type AnyField = TextField | SelectionField
+export type AnyField = TextField | SelectionField | TextAreaField
