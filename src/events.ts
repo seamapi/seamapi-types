@@ -147,6 +147,11 @@ export type UnmanagedAccessCodeCreatedEvent =
 export type UnmanagedAccessCodeRemovedEvent =
   CommonAccessCodeEvent<"access_code.unmanaged.removed">
 
+export type NowAbleToProgramAccessCodesEvent =
+  CommonAccessCodeEvent<"access_code.now_able_to_program_access_codes">
+export type LostAbilityToProgramAccessCodesEvent =
+  CommonAccessCodeEvent<"access_code.lost_ability_to_program_access_codes">
+
 // Noise thresholds
 export type NoiseDetectedEvent =
   CommonDeviceEvent<"noise_detection.detected_noise">
@@ -241,6 +246,8 @@ export type SeamEvent =
   | UnmanagedAccessCodeRemovedEvent
   | ExternalModificationAccessCodeEvent
   | ExternalDeletionAccessCodeEvent
+  | NowAbleToProgramAccessCodesEvent
+  | LostAbilityToProgramAccessCodesEvent
   | NoiseDetectedEvent
   | NoiseThresholdTriggeredEvent
   | ConnectedAccountConnected
