@@ -231,7 +231,7 @@ export interface CommonPhoneEvent<
   occurred_at: string
 }
 
-export type PhoneDeactivated = CommonPhoneEvent<"phone.deactivated">
+export type PhoneDeactivatedEvent = CommonPhoneEvent<"phone.deactivated">
 
 export type SeamEvent =
   | DeviceConnectedEvent
@@ -281,4 +281,4 @@ export type SeamEvent =
   | DeviceConnectionStabilized
   | DeviceErrorSubscriptionRequired
   | DeviceErrorSubscriptionRequiredResolved
-  | PhoneDeactivated
+  | PhoneDeactivatedEvent
