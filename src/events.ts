@@ -218,6 +218,21 @@ export type ConnectedAccountCompletedFirstSync =
 export type ConnectedAccountDeleted =
   CommonConnectedAccountEvent<"connected_account.deleted">
 
+export interface CommonPhoneEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    device_id: string
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type PhoneDeactivated = CommonPhoneEvent<"phone.deactivated">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | UnmanagedDeviceConnectedEvent
@@ -266,3 +281,4 @@ export type SeamEvent =
   | DeviceConnectionStabilized
   | DeviceErrorSubscriptionRequired
   | DeviceErrorSubscriptionRequiredResolved
+  | PhoneDeactivated
