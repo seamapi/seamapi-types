@@ -213,8 +213,8 @@ export type ConnectedAccountCompletedFirstSync =
 export type ConnectedAccountDeleted =
   CommonConnectedAccountEvent<"connected_account.deleted">
 
-export type ConnectedAccountCompletedSyncAfterReconnection =
-  CommonConnectedAccountEvent<"connected_account.completed_sync_after_reconnection">
+export type ConnectedAccountCompletedFirstSyncAfterReconnection = 
+  CommonConnectedAccountEvent<"connected_account.completed_first_sync_after_reconnection">
 
 export interface CommonPhoneEvent<
   EventType extends string,
@@ -267,7 +267,7 @@ export type SeamEvent =
   | ConnectedAccountDisconnected
   | ConnectedAccountCompletedFirstSync
   | ConnectedAccountDeleted
-  | ConnectedAccountCompletedSyncAfterReconnection
+  | ConnectedAccountCompletedFirstSyncAfterReconnection
   | LockLockedEvent
   | LockUnlockedEvent
   | DeviceThirdPartyIntegrationDetected
