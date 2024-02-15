@@ -1,6 +1,6 @@
 # Seam Connect Types
 
- Shared Typescript types for using the [Seam Connect API](https://github.com/seamapi/javascript).
+Shared Typescript types for using the [Seam Connect API](https://github.com/seamapi/javascript).
 
 ## Usage
 
