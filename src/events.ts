@@ -213,7 +213,7 @@ export type ConnectedAccountCompletedFirstSync =
 export type ConnectedAccountDeleted =
   CommonConnectedAccountEvent<"connected_account.deleted">
 
-export type ConnectedAccountCompletedSyncAfterReconnection = 
+export type ConnectedAccountCompletedSyncAfterReconnection =
   CommonConnectedAccountEvent<"connected_account.completed_sync_after_reconnection">
 
 export interface CommonPhoneEvent<
