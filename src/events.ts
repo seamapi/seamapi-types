@@ -175,6 +175,42 @@ export type LockUnlockedEvent = CommonDeviceEvent<
   }
 >
 
+// Acs Credentials
+export interface CommonAcsCredentialEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    connected_account_id: string
+    acs_system_id: string
+    acs_credential_id: string
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type AcsCredentialDeleted =
+  CommonAcsCredentialEvent<"acs_credential.deleted">
+// Acs Users
+export interface CommonAcsUserEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    connected_account_id: string
+    acs_system_id: string
+    acs_user_id: string
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type AcsUserDeleted = CommonAcsUserEvent<"acs_user.deleted">
+
 // Connected accounts
 export interface CommonConnectedAccountEvent<
   EventType extends string,
@@ -279,3 +315,5 @@ export type SeamEvent =
   | DeviceErrorSubscriptionRequired
   | DeviceErrorSubscriptionRequiredResolved
   | PhoneDeactivatedEvent
+  | AcsCredentialDeleted
+  | AcsUserDeleted
