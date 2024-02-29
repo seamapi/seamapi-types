@@ -267,6 +267,22 @@ export interface CommonPhoneEvent<
 
 export type PhoneDeactivatedEvent = CommonPhoneEvent<"phone.deactivated">
 
+export interface CommonEnrollmentAutomationEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    enrollment_automation_id: string
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type EnrollmentAutomationDeletedEvent =
+  CommonEnrollmentAutomationEvent<"enrollment_automation.deleted">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | UnmanagedDeviceConnectedEvent
@@ -317,3 +333,4 @@ export type SeamEvent =
   | PhoneDeactivatedEvent
   | AcsCredentialDeleted
   | AcsUserDeleted
+  | EnrollmentAutomationDeletedEvent
