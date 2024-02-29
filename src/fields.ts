@@ -32,9 +32,13 @@ export type TextAreaField = Field<
   string
 >
 
-declare type RadioControlTextField = Field<"radio-control-text", {
-  options: [TextField["props"], TextField["props"]]
-}, string>;
+declare type RadioControlTextField = Field<
+  "radio-control-text",
+  {
+    options: [TextField["props"], TextField["props"]]
+  },
+  string
+>
 
 export type SelectionField = Field<
   "selection",
@@ -47,4 +51,8 @@ export type SelectionField = Field<
   string
 >
 
-export type AnyField = TextField | SelectionField | TextAreaField | RadioControlTextField
+export type AnyField =
+  | TextField
+  | SelectionField
+  | TextAreaField
+  | RadioControlTextField
