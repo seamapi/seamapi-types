@@ -226,7 +226,8 @@ export interface CommonClientSessionEvent<
   occurred_at: string
 }
 
-export type ClientSessionDeleted = CommonClientSessionEvent<"client_session.deleted">
+export type ClientSessionDeleted =
+  CommonClientSessionEvent<"client_session.deleted">
 
 // Connected accounts
 export interface CommonConnectedAccountEvent<
