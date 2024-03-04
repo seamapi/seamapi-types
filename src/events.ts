@@ -220,6 +220,7 @@ export interface CommonClientSessionEvent<
   payload: Payload & {
     workspace_id: string
     connected_account_id?: string
+    user_identity_id?: string
     client_session_id: string
   }
   created_at: string
