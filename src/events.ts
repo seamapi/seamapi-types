@@ -211,6 +211,24 @@ export interface CommonAcsUserEvent<
 
 export type AcsUserDeleted = CommonAcsUserEvent<"acs_user.deleted">
 
+// client session
+export interface CommonClientSessionEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    workspace_id: string
+    connected_account_id: string
+    client_session_id: string
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type ClientSessionDeleted =
+  CommonClientSessionEvent<"client_session.deleted">
+
 // Connected accounts
 export interface CommonConnectedAccountEvent<
   EventType extends string,
@@ -334,3 +352,4 @@ export type SeamEvent =
   | AcsCredentialDeleted
   | AcsUserDeleted
   | EnrollmentAutomationDeletedEvent
+  | ClientSessionDeleted
