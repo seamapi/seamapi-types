@@ -311,6 +311,7 @@ export type SeamEvent =
   | DeviceLowBatteryEvent
   | DeviceBatteryStatusChanged
   | DeviceRemovedEvent
+  | DeviceDeletedEvent
   | CreateAccessCodeEvent
   | ChangeAccessCodeEvent
   | ScheduledOnDeviceAccessCodeEvent
