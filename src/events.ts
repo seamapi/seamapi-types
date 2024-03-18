@@ -83,6 +83,12 @@ export type DeviceErrorSubscriptionRequired =
 export type DeviceErrorSubscriptionRequiredResolved =
   CommonDeviceEvent<"device.error.subscription_required.resolved">
 
+export type DeviceAccessoryKeypadConnected =
+  CommonDeviceEvent<"device.accessory_keypad_connected">
+
+export type DeviceAccessoryKeypadDisconnected =
+  CommonDeviceEvent<"device.accessory_keypad_disconnected">
+
 // Access codes
 export interface CommonAccessCodeEvent<
   EventType extends string,
@@ -353,3 +359,5 @@ export type SeamEvent =
   | AcsUserDeleted
   | EnrollmentAutomationDeletedEvent
   | ClientSessionDeleted
+  | DeviceAccessoryKeypadConnected
+  | DeviceAccessoryKeypadDisconnected
