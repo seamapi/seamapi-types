@@ -306,6 +306,28 @@ export interface CommonEnrollmentAutomationEvent<
 export type EnrollmentAutomationDeletedEvent =
   CommonEnrollmentAutomationEvent<"enrollment_automation.deleted">
 
+// Action Attempts
+export interface CommonActionAttemptEvent<
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
+> {
+  event_type: EventType
+  payload: Payload & {
+    action_attempt_id: string
+    action_type: string
+    status: string
+    error: any
+  }
+  created_at: string
+  occurred_at: string
+}
+
+export type ActionAttemptLockDoorSucceededEvent =
+  CommonActionAttemptEvent<"action_attempt.lock_door.succeeded">
+
+export type ActionAttemptLockDoorFailedEvent =
+  CommonActionAttemptEvent<"action_attempt.lock_door.failed">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | UnmanagedDeviceConnectedEvent
@@ -361,3 +383,5 @@ export type SeamEvent =
   | ClientSessionDeleted
   | DeviceAccessoryKeypadConnected
   | DeviceAccessoryKeypadDisconnected
+  | ActionAttemptLockDoorSucceededEvent
+  | ActionAttemptLockDoorFailedEvent
