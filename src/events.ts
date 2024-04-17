@@ -316,7 +316,6 @@ export interface CommonActionAttemptEvent<
     action_attempt_id: string
     action_type: string
     status: string
-    error: any
   }
   created_at: string
   occurred_at: string
