@@ -313,6 +313,7 @@ export interface CommonActionAttemptEvent<
 > {
   event_type: EventType
   payload: Payload & {
+    workspace_id: string
     action_attempt_id: string
     action_type: string
     status: string
