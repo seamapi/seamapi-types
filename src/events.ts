@@ -317,6 +317,8 @@ export interface CommonActionAttemptEvent<
     action_attempt_id: string
     action_type: string
     status: string
+    device_id: string
+    connected_account_id: string
   }
   created_at: string
   occurred_at: string
