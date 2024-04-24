@@ -391,3 +391,5 @@ export type SeamEvent =
   | DeviceAccessoryKeypadDisconnected
   | ActionAttemptLockDoorSucceededEvent
   | ActionAttemptLockDoorFailedEvent
+  | ActionAttemptUnlockDoorSucceededEvent
+  | ActionAttemptUnlockDoorFailedEvent
