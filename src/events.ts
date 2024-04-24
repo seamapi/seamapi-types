@@ -330,6 +330,12 @@ export type ActionAttemptLockDoorSucceededEvent =
 export type ActionAttemptLockDoorFailedEvent =
   CommonActionAttemptEvent<"action_attempt.lock_door.failed">
 
+export type ActionAttemptUnlockDoorSucceededEvent =
+  CommonActionAttemptEvent<"action_attempt.unlock_door.succeeded">
+
+export type ActionAttemptUnlockDoorFailedEvent =
+  CommonActionAttemptEvent<"action_attempt.unlock_door.failed">
+
 export type SeamEvent =
   | DeviceConnectedEvent
   | UnmanagedDeviceConnectedEvent
