@@ -152,6 +152,21 @@ export interface SmartThingsLocation {
   name: string
 }
 
+export type InstructionsPane = Pane<
+  "instructions_pane",
+  {
+    title: string
+    description: string
+    custom_redirect_url?: string
+    items: Array<{
+      text: string
+      copyValue?: string
+    }>
+    continueText?: string
+  },
+  {}
+>
+
 export type FinishedPane = Pane<
   "finished_pane",
   {
@@ -194,5 +209,6 @@ export type AnyPane =
   | TwoFactorPane
   | FieldsPane
   | FinishedPane
+  | InstructionsPane
 
 export type AnyPaneWithoutSubmitProps = Except<AnyPane, "submit_props">
