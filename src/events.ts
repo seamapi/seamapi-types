@@ -196,7 +196,7 @@ export interface CommonAcsSystemEvent<
   occurred_at: string
 }
 
-export type AcsSystemCreatedEvent = CommonAcsSystemEvent<"acs_system.created">
+export type AcsSystemConnectedEvent = CommonAcsSystemEvent<"acs_system.connected">
 
 // Acs Credentials
 export interface CommonAcsCredentialEvent<
@@ -391,6 +391,7 @@ export type SeamEvent =
   | DeviceErrorSubscriptionRequired
   | DeviceErrorSubscriptionRequiredResolved
   | PhoneDeactivatedEvent
+  | AcsSystemConnectedEvent
   | AcsCredentialDeleted
   | AcsUserDeleted
   | EnrollmentAutomationDeletedEvent
