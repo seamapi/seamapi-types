@@ -214,14 +214,14 @@ export type AcsCredentialDeleted =
 
 // Acs Users
 export interface CommonAcsUserEvent<
-EventType extends string,
-Payload extends Record<string, unknown> | {} = {}
+  EventType extends string,
+  Payload extends Record<string, unknown> | {} = {}
 > extends CommonAcsSystemEvent<
-  EventType,
-  Payload & {
-    acs_user_id: string
-  }
-> {}
+    EventType,
+    Payload & {
+      acs_user_id: string
+    }
+  > {}
 
 export type AcsUserDeleted = CommonAcsUserEvent<"acs_user.deleted">
 
