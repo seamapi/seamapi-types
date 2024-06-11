@@ -196,7 +196,8 @@ export interface CommonAcsSystemEvent<
   occurred_at: string
 }
 
-export type AcsSystemConnectedEvent = CommonAcsSystemEvent<"acs_system.connected">
+export type AcsSystemConnectedEvent =
+  CommonAcsSystemEvent<"acs_system.connected">
 
 // Acs Credentials
 export interface CommonAcsCredentialEvent<
