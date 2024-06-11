@@ -181,8 +181,8 @@ export type LockUnlockedEvent = CommonDeviceEvent<
   }
 >
 
-// Acs Credentials
-export interface CommonAcsCredentialEvent<
+// Acs Systems
+export interface CommonAcsSystemEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
 > {
@@ -191,29 +191,37 @@ export interface CommonAcsCredentialEvent<
     workspace_id: string
     connected_account_id: string
     acs_system_id: string
-    acs_credential_id: string
   }
   created_at: string
   occurred_at: string
 }
 
-export type AcsCredentialDeleted =
-  CommonAcsCredentialEvent<"acs_credential.deleted">
-// Acs Users
-export interface CommonAcsUserEvent<
+export type AcsSystemCreatedEvent = CommonAcsSystemEvent<"acs_system.created">
+
+// Acs Credentials
+export interface CommonAcsCredentialEvent<
   EventType extends string,
   Payload extends Record<string, unknown> | {} = {}
-> {
-  event_type: EventType
-  payload: Payload & {
-    workspace_id: string
-    connected_account_id: string
-    acs_system_id: string
+> extends CommonAcsSystemEvent<
+    EventType,
+    Payload & {
+      acs_credential_id: string
+    }
+  > {}
+
+export type AcsCredentialDeleted =
+  CommonAcsCredentialEvent<"acs_credential.deleted">
+
+// Acs Users
+export interface CommonAcsUserEvent<
+EventType extends string,
+Payload extends Record<string, unknown> | {} = {}
+> extends CommonAcsSystemEvent<
+  EventType,
+  Payload & {
     acs_user_id: string
   }
-  created_at: string
-  occurred_at: string
-}
+> {}
 
 export type AcsUserDeleted = CommonAcsUserEvent<"acs_user.deleted">
 
