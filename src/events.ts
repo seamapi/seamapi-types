@@ -186,6 +186,13 @@ export type LockUnlockedEvent = CommonDeviceEvent<
   }
 >
 
+export type LockAccessDeniedEvent = CommonDeviceEvent<
+  "lock.access_denied",
+  {
+    access_code_id?: string
+  }
+>
+
 // Acs Systems
 export interface CommonAcsSystemEvent<
   EventType extends string,
@@ -388,6 +395,7 @@ export type SeamEvent =
   | ConnectedAccountCompletedFirstSyncAfterReconnection
   | LockLockedEvent
   | LockUnlockedEvent
+  | LockAccessDeniedEvent
   | DeviceThirdPartyIntegrationDetected
   | DeviceThirdPartyIntegrationNoLongerDetected
   | DeviceSaltoPrivacyModeActivated
