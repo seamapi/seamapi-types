@@ -165,7 +165,12 @@ export type NoiseThresholdTriggeredEvent = CommonDeviceEvent<
 >
 
 // Locks
-export type LockMethod = "keycode" | "manual" | "unknown" | "seamapi"
+export type LockMethod =
+  | "keycode"
+  | "manual"
+  | "automatic"
+  | "unknown"
+  | "seamapi"
 export type LockLockedEvent = CommonDeviceEvent<
   "lock.locked",
   {
